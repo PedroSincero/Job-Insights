@@ -57,21 +57,16 @@ def filter_by_industry(jobs, industry):
 
 
 def get_max_salary(path):
-    """Get the maximum salary of all jobs
+    result = set()
+    jobs_dict = read(path)
+    for dict in jobs_dict:
+        if dict['max_salary'].isnumeric():
+            result.add(int(dict['max_salary']))
 
-    Must call `read`
+    return max(list(result))
 
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The maximum salary paid out of all job opportunities
-    """
-    pass
+# isnumeric
+#  https://www.programiz.com/python-programming/methods/string/isnumeric
 
 
 def get_min_salary(path):
