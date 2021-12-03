@@ -92,5 +92,5 @@ def sort_by(jobs, criteria):
         raise ValueError(f"invalid sorting criteria: {criteria}")
 
     reverse = criteria in ["max_salary", "date_posted"]
-
+    print(jobs.sort(key=key, reverse=reverse))
     jobs.sort(key=key, reverse=reverse)
